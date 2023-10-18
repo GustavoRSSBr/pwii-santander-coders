@@ -33,8 +33,8 @@ public class ProdutoController {
         return this.produtoService.todos();
     }
 
-    @RequestMapping(value = "/buscarPorId", method = RequestMethod.GET)
-    public Optional<Produto> buscarPorId(Long id) {
+    @RequestMapping(value = "/buscarPorId/{id}", method = RequestMethod.GET)
+    public Optional<Produto> buscarPorId(@PathVariable("{id}") Long id) {
         return this.produtoService.buscarPorId(id);
     }
 }
